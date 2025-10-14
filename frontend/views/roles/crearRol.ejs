@@ -1,0 +1,14 @@
+<div id="modalCrearRol" class="modal">
+  <div class="modal-content">
+    <h3>Crear nuevo rol</h3>
+    <form action="/crearRoles" method="POST">
+      <label for="nombre_rol">Nombre del rol:</label>
+      <input type="text" name="nombre_rol" id="nombre_rol" required>
+
+      <div class="modal-actions">
+        <button type="submit" class="btn-primary">Guardar</button>
+        <button type="button" id="cerrarModalCrear" class="btn-secundario">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

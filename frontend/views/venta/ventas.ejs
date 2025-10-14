@@ -1,0 +1,44 @@
+<%- include('../partials/header') %>
+<%- include('../partials/sidebar') %>
+
+<main class="contenido">
+  <div class="ventas-container">
+    <div class="ventas-header roles-header">
+      <h2>Mis Ventas</h2>
+      <button id="btnNuevaVenta" class="btn-primary">+ Crear Venta</button>
+    </div>
+
+    <table class="ventas-table roles-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Producto</th>
+          <th>Vendedor</th>
+          <th>Cantidad</th>
+          <th>Subtotal</th>
+          <th>IVA</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody id="tablaVentas">
+        <% ventas.forEach(venta => { %>
+          <tr>
+            <td><%= venta.id_venta %></td>
+            <td><%= venta.nombre_producto %></td>
+            <td><%= venta.nombre_usuario %></td>
+            <td><%= venta.cantidad %></td>
+            <td><%= venta.subtotal.toFixed(2) %></td>
+            <td><%= venta.iva.toFixed(2) %></td>
+            <td><%= venta.total.toFixed(2) %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+
+  <%- include('./crearVenta') %>
+</main>
+
+<script src="/js/ventas.js"></script>
+</body>
+</html>

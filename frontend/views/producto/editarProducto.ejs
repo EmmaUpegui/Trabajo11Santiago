@@ -1,0 +1,26 @@
+<div id="modalEditarProducto" class="modal" style="display: none;">
+  <div class="modal-content">
+    <h3>Editar Producto</h3>
+
+    <form id="formEditarProducto" action="/actualizarProducto" method="POST">
+      <input type="hidden" name="id_producto" id="editIdProducto">
+
+      <label for="editNombreProducto">Nombre del producto</label>
+      <input type="text" name="nombre_producto" id="editNombreProducto" required>
+
+      <label for="editPrecioProducto">Precio</label>
+      <input type="number" step="0.01" name="precio" id="editPrecioProducto" required>
+
+      <label for="editCantidadProducto">Cantidad</label>
+      <input type="number" name="cantidad" id="editCantidadProducto" required>
+
+      <label for="editCategoriaProducto">Categoría</label>
+      <input type="text" name="categoria" id="editCategoriaProducto" required>
+
+      <div class="modal-actions">
+        <button type="submit" class="btn-primary">Guardar</button>
+        <button type="button" id="cerrarModalEditarProducto" class="btn-secundario">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

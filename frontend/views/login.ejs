@@ -1,0 +1,31 @@
+<%- include('./partials/header') %> <!-- Header incluido -->
+
+<link rel="stylesheet" href="/css/login.css">
+
+<main class="contenido login-contenido login-page">
+  <div class="login-container">
+    <h2>Iniciar Sesión</h2>
+    
+    <form action="/login" method="POST" id="formLogin" class="form-login">
+      <!-- Nombre de usuario -->
+      <div class="form-group">
+        <label for="nombre_usuario">Usuario</label>
+        <input type="text" name="nombre_usuario" id="nombre_usuario" placeholder="Ingrese su usuario" required>
+      </div>
+
+      <!-- Contraseña -->
+      <div class="form-group">
+        <label for="contrasena">Contraseña</label>
+        <input type="password" name="contrasena" id="contrasena" placeholder="Ingrese su contraseña" required>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">Ingresar</button>
+      </div>
+    </form>
+
+    <% if (typeof error !== 'undefined') { %>
+      <p class="error-mensaje"><%= error %></p>
+    <% } %>
+  </div>
+</main>

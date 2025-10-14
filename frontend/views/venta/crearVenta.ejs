@@ -1,0 +1,29 @@
+<div id="modalCrearVenta" class="modal" style="display: none;">
+  <div class="modal-content">
+    <h3>Crear nueva venta</h3>
+
+    <!-- Mensaje de error -->
+    <div id="mensaje-error-venta" class="alerta-venta" style="display:none;"></div>
+
+    <form id="formCrearVenta" action="/crearVenta" method="POST">
+      <label for="id_producto">Producto</label>
+      <select name="id_producto" id="id_producto" required>
+        <option value="">Cargando productos...</option>
+      </select>
+
+      <label for="cantidad">Cantidad</label>
+      <input type="number" name="cantidad" id="cantidad" value="1" min="1" required>
+
+      <input type="hidden" name="usuario" value="<%= usuario %>">
+
+      <p>Subtotal: <span id="subtotal">0.00</span></p>
+      <p>IVA (19%): <span id="iva">0.00</span></p>
+      <p>Total: <span id="total">0.00</span></p>
+
+      <div class="modal-actions">
+        <button type="submit" class="btn-primary">Guardar</button>
+        <button type="button" id="cerrarModalCrearVenta" class="btn-secundario">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

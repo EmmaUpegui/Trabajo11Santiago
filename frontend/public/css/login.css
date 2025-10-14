@@ -1,0 +1,88 @@
+/* Solo se aplica si es la página de login */
+.login-page {
+  margin-left: 0 !important; /* evita margen del dashboard */
+  padding: 0 !important;     /* elimina padding heredado */
+  width: 100% !important;    /* ancho completo */
+}
+
+/* Contenedor principal: ocupa toda la pantalla */
+.login-contenido.login-page {
+  display: flex !important;
+  justify-content: center;  /* Centrado horizontal */
+  align-items: center;      /* Centrado vertical */
+  min-height: 100vh;        /* Ocupa toda la altura de la ventana */
+  background-color: #f5f5f5; /* Fondo suave */
+  margin: 0;
+  padding: 0;
+}
+
+/* Caja del formulario */
+.login-container {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;        /* Máximo ancho */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  box-sizing: border-box;
+}
+
+/* Título */
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+/* Formulario */
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Botón */
+.form-actions {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.form-actions .btn-primary {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-actions .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Mensaje de error */
+.error-mensaje {
+  color: red;
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: bold;
+}

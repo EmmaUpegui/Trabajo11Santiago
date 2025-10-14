@@ -1,0 +1,45 @@
+<%- include('../partials/header') %>
+<%- include('../partials/sidebar') %>
+
+<main class="contenido">
+  <div class="roles-container">
+    <div class="roles-header">
+      <h2>Roles del Sistema</h2>
+      <button id="btnNuevoRol" class="btn-primary">+ Crear Rol</button>
+    </div>
+
+    <table class="roles-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre del Rol</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tablaRoles">
+        <% roles.forEach(rol => { %>
+          <tr>
+            <td><%= rol.id_rol %></td>
+            <td><%= rol.nombre_rol %></td>
+            <td>
+              <button 
+                class="btn-editar" 
+                data-id="<%= rol.id_rol %>"
+                data-nombre="<%= rol.nombre_rol %>">
+                Editar
+              </button>
+              <a href="/eliminarRol/<%= rol.id_rol %>" class="btn-eliminar">Eliminar</a>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+
+  <%- include('./crearRol') %>
+  <%- include('./editarRol') %>
+</main>
+
+<script src="/js/roles.js"></script>
+</body>
+</html>

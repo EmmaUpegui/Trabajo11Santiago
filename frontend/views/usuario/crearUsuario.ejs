@@ -1,0 +1,33 @@
+<div id="modalCrearUsuario" class="modal">
+  <div class="modal-content">
+    <h3>Crear nuevo usuario</h3>
+    <form id="formCrearUsuario" action="/crearUsuario" method="POST">
+      <!-- Cédula -->
+      <label for="cedula_usuario">Cédula:</label>
+      <input type="text" name="cedula" id="cedula_usuario" required>
+
+      <!-- Nombre completo -->
+      <label for="nombre_completo_usuario">Nombre completo:</label>
+      <input type="text" name="nombre_completo" id="nombre_completo_usuario" required>
+
+      <!-- Nombre de usuario -->
+      <label for="nombre_usuario">Nombre de usuario:</label>
+      <input type="text" name="nombre_usuario" id="nombre_usuario" required>
+
+      <!-- Contraseña -->
+      <label for="contrasena_usuario">Contraseña:</label>
+      <input type="password" name="contrasena" id="contrasena_usuario" required>
+
+      <!-- Lista de roles -->
+      <label for="rol_usuario">Rol:</label>
+      <select name="id_rol" id="rol_usuario" required>
+        <option value="">Cargando roles...</option>
+      </select>
+
+      <div class="modal-actions">
+        <button type="submit" class="btn-primary">Guardar</button>
+        <button type="button" id="cerrarModalCrearUsuario" class="btn-secundario">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

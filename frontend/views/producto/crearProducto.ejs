@@ -1,0 +1,24 @@
+<div id="modalCrearProducto" class="modal" style="display: none;">
+  <div class="modal-content">
+    <h3>Crear nuevo producto</h3>
+
+    <form id="formCrearProducto" action="/crearProducto" method="POST">
+      <label for="nombre_producto">Nombre del producto</label>
+      <input type="text" name="nombre_producto" id="nombre_producto" required>
+
+      <label for="precio_producto">Precio</label>
+      <input type="number" step="0.01" name="precio" id="precio_producto" required>
+
+      <label for="cantidad_producto">Cantidad</label>
+      <input type="number" name="cantidad" id="cantidad_producto" required>
+
+      <label for="categoria_producto">Categoría</label>
+      <input type="text" name="categoria" id="categoria_producto" required>
+
+      <div class="modal-actions">
+        <button type="submit" class="btn-primary">Guardar</button>
+        <button type="button" id="cerrarModalCrearProducto" class="btn-secundario">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

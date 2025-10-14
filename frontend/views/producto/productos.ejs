@@ -1,0 +1,54 @@
+<%- include('../partials/header') %>
+<%- include('../partials/sidebar') %>
+
+<main class="contenido">
+  <div class="productos-container">
+    <div class="productos-header roles-header">
+      <h2>Productos del Sistema</h2>
+      <button id="btnNuevoProducto" class="btn-primary">+ Crear Producto</button>
+    </div>
+
+    <table class="productos-table roles-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
+          <th>Categoría</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tablaProductos">
+        <% productos.forEach(producto => { %>
+          <tr>
+            <td><%= producto.id_producto %></td>
+            <td><%= producto.nombre_producto %></td>
+            <td><%= producto.precio %></td>
+            <td><%= producto.cantidad %></td>
+            <td><%= producto.categoria %></td>
+            <td>
+              <button 
+                class="btn-editar" 
+                data-id="<%= producto.id_producto %>"
+                data-nombre="<%= producto.nombre_producto %>"
+                data-precio="<%= producto.precio %>"
+                data-cantidad="<%= producto.cantidad %>"
+                data-categoria="<%= producto.categoria %>">
+                Editar
+              </button>
+              <a href="/eliminarProducto/<%= producto.id_producto %>" class="btn-eliminar">Eliminar</a>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+
+  <%- include('./crearProducto') %>
+  <%- include('./editarProducto') %>
+</main>
+
+<script src="/js/productos.js"></script>
+</body>
+</html>

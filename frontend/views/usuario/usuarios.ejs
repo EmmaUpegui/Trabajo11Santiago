@@ -1,0 +1,60 @@
+<%- include('../partials/header') %>
+  <%- include('../partials/sidebar') %>
+
+    <main class="contenido">
+      <div class="usuarios-container">
+        <div class="usuarios-header roles-header">
+          <h2>Usuarios del Sistema</h2>
+          <button id="btnNuevoUsuario" class="btn-primary">+ Crear Usuario</button>
+        </div>
+
+        <table class="usuarios-table roles-table">
+          <thead>
+            <tr>
+              <th>Cédula</th>
+              <th>Nombre</th>
+              <th>Nombre Usuario</th>
+              <th>Rol</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaUsuarios">
+            <% usuarios.forEach(usuario=> { %>
+              <tr>
+                <td>
+                  <%= usuario.cedula %>
+                </td>
+                <td>
+                  <%= usuario.nombre_completo %>
+                </td>
+                <td>
+                  <%= usuario.nombre_usuario %>
+                </td>
+                <td>
+                  <%= usuario.nombre_rol %>
+                </td>
+                <td>
+                  <button class="btn-editar" data-id="<%= usuario.cedula %>" data-cedula="<%= usuario.cedula %>"
+                    data-cedula="<%= usuario.cedula %>"
+                    data-nombre-completo="<%= usuario.nombre_completo %>"
+                    data-nombre-usuario="<%= usuario.nombre_usuario %>"
+                    data-contrasena="<%= usuario.contrasena %>"
+                    data-rol-id="<%= usuario.id_rol %>">
+                  Editar
+                  </button>
+                  <a href="/eliminarUsuario/<%= usuario.cedula %>" class="btn-eliminar">Eliminar</a>
+                </td>
+              </tr>
+              <% }) %>
+          </tbody>
+        </table>
+      </div>
+
+      <%- include('./crearUsuario') %>
+        <%- include('./editarUsuario') %>
+    </main>
+
+    <script src="/js/usuarios.js"></script>
+    </body>
+
+    </html>

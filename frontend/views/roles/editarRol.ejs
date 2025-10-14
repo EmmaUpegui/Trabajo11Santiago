@@ -1,0 +1,17 @@
+<div id="modalEditarRol" class="modal" style="display: none;">
+  <div class="modal-content">
+    <h3>Editar Rol</h3>
+
+    <form id="formEditarRol" action="/actualizarRol" method="POST">
+      <input type="hidden" name="id_rol" id="editIdRol">
+
+      <label for="editNombreRol">Nombre del Rol</label>
+      <input type="text" name="nombre_rol" id="editNombreRol" required>
+
+      <div class="modal-actions">
+        <button type="submit" class="btn-primary">Guardar</button>
+        <button type="button" id="cerrarModalEditar" class="btn-cerrar">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

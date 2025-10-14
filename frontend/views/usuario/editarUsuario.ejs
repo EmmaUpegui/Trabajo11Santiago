@@ -1,0 +1,28 @@
+<div id="modalEditarUsuario" class="modal" style="display: none;">
+  <div class="modal-content">
+    <h3>Editar Usuario</h3>
+
+    <form id="formEditarUsuario" action="/actualizarUsuario" method="POST">
+      <input type="hidden" name="cedula" id="editCedulaUsuario">
+
+      <label for="editNombreCompletoUsuario">Nombre completo</label>
+      <input type="text" name="nombre_completo" id="editNombreCompletoUsuario" required>
+
+      <label for="editNombreUsuario">Nombre de usuario</label>
+      <input type="text" name="nombre_usuario" id="editNombreUsuario" required>
+
+      <label for="editContrasenaUsuario">Contraseña</label>
+      <input type="password" name="contrasena" id="editContrasenaUsuario" required>
+
+      <label for="editRolUsuario">Rol</label>
+      <select name="id_rol" id="editRolUsuario" required>
+        <option value="">Cargando roles...</option>
+      </select>
+
+      <div class="modal-actions">
+        <button type="submit" class="btn-primary">Guardar</button>
+        <button type="button" id="cerrarModalEditarUsuario" class="btn-secundario">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
