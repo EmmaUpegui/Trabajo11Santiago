@@ -14,10 +14,12 @@
           <th>ID</th>
           <th>Producto</th>
           <th>Vendedor</th>
+          <th>Cliente</th>
           <th>Cantidad</th>
           <th>Subtotal</th>
           <th>IVA</th>
           <th>Total</th>
+          <th>Acciones</th> <!-- 🔹 Nueva columna -->
         </tr>
       </thead>
       <tbody id="tablaVentas">
@@ -26,10 +28,17 @@
             <td><%= venta.id_venta %></td>
             <td><%= venta.nombre_producto %></td>
             <td><%= venta.nombre_usuario %></td>
+            <td><%= venta.cliente %></td>
             <td><%= venta.cantidad %></td>
             <td><%= venta.subtotal.toFixed(2) %></td>
             <td><%= venta.iva.toFixed(2) %></td>
             <td><%= venta.total.toFixed(2) %></td>
+            <td>
+              <!-- 🔹 Botón Descargar PDF -->
+              <a href="/ventas/<%= venta.id_venta %>" class="btn-editar">
+                Descargar PDF
+              </a>
+            </td>
           </tr>
         <% }) %>
       </tbody>

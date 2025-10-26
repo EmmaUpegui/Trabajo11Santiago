@@ -134,7 +134,7 @@ usuario.login = async (req, res) => {
     req.session.nombre_completo = usuarioDB.nombre_completo;
 
     console.log('✅ Usuario autenticado:', usuarioDB.nombre_completo);
-    res.redirect('/ventas'); // redirige a la página principal
+    res.redirect('/inicio'); // redirige a la página principal
 
   } catch (error) {
     console.error('❌ Error en login:', error);

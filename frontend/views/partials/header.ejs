@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pyme Inventorio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PymeInventorio</title>
+
+  <!-- CSS global -->
   <link rel="stylesheet" href="/css/style.css">
+  <!-- si usas home.css o login.css, esos se incluyen en cada vista -->
+  <!-- Íconos (opcional CDN) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <header class="header">
+  <div class="header-inner">
+    <div class="header-center">
+      <a href="/inicio">
+        <img src="images/logo.webp" alt="Logo" class="logo" />
+      </a>
+    </div>
 
-<header class="header">
-  <div class="logo-container">
-    <img src="/images/logo.webp" alt="Logo" class="logo">
+    <% if (nombre_completo && nombre_completo !== 'Invitado') { %>
+      <div class="header-right">
+        <a href="/logout" class="logout-btn">Cerrar sesión</a>
+      </div>
+    <% } %>
   </div>
-</header>
+  </header>
+
+  
+<!-- Incluimos el footer automáticamente -->
+<%- include('./footer') %>
+
+<!-- CSS de footer -->
+<link rel="stylesheet" href="/css/footer.css">
+
