@@ -32,7 +32,7 @@ venta.crearVenta = async (req, res) => {
     }
 
     const subtotal = precio * cantidad;
-    const iva = subtotal * 0.12;
+    const iva = subtotal * 0.19;
     const total = subtotal + iva;
 
     const queryInsert = `
